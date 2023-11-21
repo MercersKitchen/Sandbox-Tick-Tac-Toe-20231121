@@ -20,9 +20,17 @@ CS20 Project
 
 Optional Buttons
 - Menu Button: brings up interactive menu for more advanced configurations
-- 
+- Students to develop this on their own
+
+Main DIV ratios: example
+- Main Game Space: 12/13 of height
+- Restart and Quit Buttons, bottom 1/13
+- 1/3 of main game space: top bottoms
+- 2/3 of main game space: short side of smaller dimension of geometry (depends on landscape, portrait, or square)
 
 CONTINUE HERE
 
 # Planning List of Behaviours
 - [] 2 player mode
+
+---
