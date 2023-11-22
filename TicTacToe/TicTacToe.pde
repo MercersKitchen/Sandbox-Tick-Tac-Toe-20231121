@@ -2,8 +2,15 @@
 */
 //
 //Global Variables
+int appWidth, appHeight;
 //
-void setup() {} //End setup
+void setup() {
+  //Display, based on Google Tic Tac Toe
+  size(600, 400);
+  appWidth = width;
+  appHeight = height;
+  //
+} //End setup
 //
 void draw() {} //End draw
 //
