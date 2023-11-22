@@ -55,8 +55,8 @@ void setup() {
    rect(); //Scoreboard
    rect(); //Scoreboard: X Side, Name
    rect(); //Scoreboard: X Side, Wins Integer
-   rect(); //Scoreboard: Y Side, Name
-   rect(); //Scoreboard: Y Side, Wins Integer
+   rect(); //Scoreboard: O Side, Name
+   rect(); //Scoreboard: O Side, Wins Integer
    rect(); //Instructions Text
    rect(); //Share Button
    rect(); //Share Button: screen shot
