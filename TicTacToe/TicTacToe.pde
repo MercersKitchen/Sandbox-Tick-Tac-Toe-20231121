@@ -11,6 +11,22 @@ float tttX1, tttX2, tttX3, tttX4, tttX5, tttX6, tttX7, tttX8, tttX9;
 float tttY1, tttY2, tttY3, tttY4, tttY5, tttY6, tttY7, tttY8, tttY9;
 float restartX, restartY, restartWidth, restartHeight;
 float quitX, quitY, quitWidth, quitHeight;
+float modeButtonX, modeButtonY, modeButtonWidth, modeButtonHeight;
+float modeMenuX, modeMenuY, modeMenuWidth, modeMenuHeight;
+float easyX, easyY, easyWidth, easyHeight;
+float mediumX, mediumY, mediumWidth, mediumHeight;
+float hardX, hardY, hardWidth, hardHeight;
+float twoPlayerX, twoPlayerY, twoPlayerWidth, twoPlayerHeight;
+float ssRandomX, ssRandomY, ssRandomWidth, ssRandomHeight;
+float ssAiX, ssAiY, ssAiWidth, ssAiHeight;
+float scoreBoardX, scoreBoardY, scoreBoardWidth, scoreBoardHeight;
+float xSideNameX, xSideNameY, xSideNameWidth, xSideNameHeight;
+float xSideIntegerX, xSideIntegerY, xSideIntegerWidth, xSideIntegerHeight;
+float oSideNameX, oSideNameY, oSideNameWidth, oSideNameHeight;
+float oSideIntegerX, oSideIntegerY, oSideIntegerWidth, oSideIntegerHeight;
+//
+float shareButtonX, shareButtonY, shareButtonWidth, shareButtonHieght;
+float shareButtonScreenShotX, shareButtonScreenShotY, shareButtonScreenShotWidth, shareButtonScreenShotHieght;
 //
 Boolean OS_On=false;
 //
@@ -52,6 +68,69 @@ void setup() {
   quitY = bottomButtonY;
   quitWidth = restartWidth;
   quitHeight = restartHeight;
+  modeButtonX = tttBoardSection*1/3;
+  modeButtonY = tttBoardSection*1/3;
+  modeButtonWidth = tttBoardSection;
+  modeButtonHeight = tttBoardSection;
+  float menuHeight = tttBoardSection*1/2;
+  int numberOfButtons = 6;
+  modeMenuX = modeButtonX;
+  modeMenuY = modeButtonY;
+  modeMenuWidth = tttBoardSection*2;
+  modeMenuHeight = menuHeight * numberOfButtons;
+  easyX = modeMenuX;
+  easyY = modeMenuY;
+  easyWidth = modeMenuWidth;
+  easyHeight = menuHeight;
+  mediumX = modeMenuX;
+  mediumY = easyY + menuHeight;
+  mediumWidth = modeMenuWidth;
+  mediumHeight = menuHeight;
+  hardX = modeMenuX;
+  hardY = mediumY + menuHeight;
+  hardWidth = modeMenuWidth;
+  hardHeight = menuHeight;
+  twoPlayerX = modeMenuX;
+  twoPlayerY = hardY + menuHeight;
+  twoPlayerWidth = modeMenuWidth;
+  twoPlayerHeight = menuHeight;
+  ssRandomX = modeMenuX;
+  ssRandomY = twoPlayerY + menuHeight;
+  ssRandomWidth = modeMenuWidth;
+  ssRandomHeight = menuHeight;
+  ssAiX = modeMenuX;
+  ssAiY = ssRandomY + menuHeight;
+  ssAiWidth = modeMenuWidth;
+  ssAiHeight = menuHeight;
+  scoreBoardX = modeMenuX + modeMenuWidth + modeMenuX;
+  scoreBoardY = modeMenuY;
+  scoreBoardWidth = easyWidth*2;
+  scoreBoardHeight = easyHeight*1.5;
+  xSideNameX = scoreBoardX;
+  xSideNameY = scoreBoardY;
+  xSideNameWidth = easyWidth*1/2;
+  xSideNameHeight = scoreBoardHeight;
+  xSideIntegerX = scoreBoardX + easyWidth;
+  xSideIntegerY = scoreBoardY;
+  xSideIntegerWidth = easyWidth*1/2;
+  xSideIntegerHeight = scoreBoardHeight;
+  oSideNameX = scoreBoardX*2 + easyWidth;
+  oSideNameY = scoreBoardY;
+  oSideNameWidth = easyWidth*1/2;
+  oSideNameHeight = scoreBoardHeight;
+  oSideIntegerX = scoreBoardX*3;
+  oSideIntegerY = scoreBoardY;
+  oSideIntegerWidth = easyWidth*1/2;
+  oSideIntegerHeight = scoreBoardHeight;
+  //
+  shareButtonX = appWidth - modeButtonX - tttBoardSection;
+  shareButtonY = modeButtonY;
+  shareButtonWidth = modeButtonWidth;
+  shareButtonHieght = modeButtonHeight;
+  shareButtonScreenShotX = appWidth - modeButtonX - tttBoardSection*2;
+  shareButtonScreenShotY = shareButtonY;
+  shareButtonScreenShotWidth = modeMenuWidth;
+  shareButtonScreenShotHieght = menuHeight;
   //
   //DIVs
   rect( gameSpaceX, gameSpaceY, gameSpaceWidth, gameSpaceHeight );
@@ -68,27 +147,25 @@ void setup() {
   rect( tttX9, tttY9, tttWidth, tttHeight ); //TTT Space 9
   rect( restartX, restartY, restartWidth, restartHeight ); //Restart Button
   rect( quitX, quitY, quitWidth, quitHeight ); //QUIT Button
-  /*
-   rect( modeButtonX, modeButtonY, modeButtonWidth, modeButtonHeight); //Mode Button
-   rect( modeMenuX, modeMenuY, modeMenuWidth, modeMenuHeight ); //Mode Drop Down Menu
-   rect( easyX, easyY, easyWidth, easyHeight ); //Easy, 1 Player
-   rect( mediumX, mediumY, mediumWidth, mediumHeight ); //Medium, 1 Player
-   rect( hardX, hardY, hardWidth, hardHeight ); //Hard, 1 Player
-   rect( twoPlayerX, twoPlayerY, twoPlayerWidth, twoPlayerHeight ); //2-player Mode
-   rect( ssRandomX, ssRandomY, ssRandomWidth, ssRandomHeight ); //Screen Saver Random
-   rect( ssAiX, ssAiY, ssAiWidth, ssAiHeight ); //Screen Saver AI v AI
-   rect( scoreBoardX, scoreBoardY, scoreBoardWidth, scoreBoardHeight ); //Scoreboard
-   rect( xSideNameX, xSideNameY, xSideNameWidth, xSideNameHeight ); //Scoreboard: X Side, Name
-   rect( xSideIntegerX, xSideIntegerY, xSideIntegerWidth, xSideIntegerHeight ); //Scoreboard: X Side, Wins
-   rect( oSideNameX, oSideNameY, oSideNameWidth, oSideNameHeight ); //Scoreboard: O Side, Name
-   rect( oSideIntegerX, oSideIntegerY, oSideIntegerWidth, oSideIntegerHeight ); //Scoreboard: O Side, Wins Integer
-   rect( textInstructionX, textInstructionY, textInstructionWidth, textInstructionHeight ); //Instructions Text
-   rect( shareButtonX, shareButtonY, shareButtonWidth, shareButtonHieght ); //Share Button
-   rect( shareButtonScreenShotX, shareButtonScreenShotY, shareButtonScreenShotWidth, shareButtonScreenShotHieght ); //Share Button: screen shot
-   //rect(); //Share Button: export & restart with preference
-   //rect(); //Share Button: personalization menu activation
-   //rect(); //Personalization Menu
-   */
+  rect( modeButtonX, modeButtonY, modeButtonWidth, modeButtonHeight ); //Mode Button
+  rect( modeMenuX, modeMenuY, modeMenuWidth, modeMenuHeight ); //Mode Drop Down Menu
+  rect( easyX, easyY, easyWidth, easyHeight ); //Easy, 1 Player
+  rect( mediumX, mediumY, mediumWidth, mediumHeight ); //Medium, 1 Player
+  rect( hardX, hardY, hardWidth, hardHeight ); //Hard, 1 Player
+  rect( twoPlayerX, twoPlayerY, twoPlayerWidth, twoPlayerHeight ); //2-player Mode
+  rect( ssRandomX, ssRandomY, ssRandomWidth, ssRandomHeight ); //Screen Saver Random
+  rect( ssAiX, ssAiY, ssAiWidth, ssAiHeight ); //Screen Saver AI v AI
+  //rect( scoreBoardX, scoreBoardY, scoreBoardWidth, scoreBoardHeight ); //Scoreboard
+  rect( xSideNameX, xSideNameY, xSideNameWidth, xSideNameHeight ); //Scoreboard: X Side, Name
+  rect( xSideIntegerX, xSideIntegerY, xSideIntegerWidth, xSideIntegerHeight ); //Scoreboard: X Side, Wins
+  //rect( oSideNameX, oSideNameY, oSideNameWidth, oSideNameHeight ); //Scoreboard: O Side, Name
+  //rect( oSideIntegerX, oSideIntegerY, oSideIntegerWidth, oSideIntegerHeight ); //Scoreboard: O Side, Wins Integer
+  //rect( textInstructionX, textInstructionY, textInstructionWidth, textInstructionHeight ); //Instructions Text
+  rect( shareButtonX, shareButtonY, shareButtonWidth, shareButtonHieght ); //Share Button
+  rect( shareButtonScreenShotX, shareButtonScreenShotY, shareButtonScreenShotWidth, shareButtonScreenShotHieght ); //Share Button: screen shot
+  //rect(); //Share Button: export & restart with preference
+  //rect(); //Share Button: personalization menu activation
+  //rect(); //Personalization Menu
   //
 } //End setup
 //
