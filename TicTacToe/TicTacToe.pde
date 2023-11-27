@@ -24,7 +24,7 @@ float xSideNameX, xSideNameY, xSideNameWidth, xSideNameHeight;
 float xSideIntegerX, xSideIntegerY, xSideIntegerWidth, xSideIntegerHeight;
 float oSideNameX, oSideNameY, oSideNameWidth, oSideNameHeight;
 float oSideIntegerX, oSideIntegerY, oSideIntegerWidth, oSideIntegerHeight;
-//
+float textInstructionX, textInstructionY, textInstructionWidth, textInstructionHeight;
 float shareButtonX, shareButtonY, shareButtonWidth, shareButtonHieght;
 float shareButtonScreenShotX, shareButtonScreenShotY, shareButtonScreenShotWidth, shareButtonScreenShotHieght;
 //
@@ -110,19 +110,22 @@ void setup() {
   xSideNameY = scoreBoardY;
   xSideNameWidth = easyWidth*1/2;
   xSideNameHeight = scoreBoardHeight;
-  xSideIntegerX = scoreBoardX + easyWidth;
+  xSideIntegerX = scoreBoardX + xSideNameWidth;
   xSideIntegerY = scoreBoardY;
   xSideIntegerWidth = easyWidth*1/2;
   xSideIntegerHeight = scoreBoardHeight;
-  oSideNameX = scoreBoardX*2 + easyWidth;
+  oSideNameX = xSideIntegerX + xSideIntegerWidth;
   oSideNameY = scoreBoardY;
   oSideNameWidth = easyWidth*1/2;
   oSideNameHeight = scoreBoardHeight;
-  oSideIntegerX = scoreBoardX*3;
+  oSideIntegerX = oSideNameX + easyWidth*1/2;
   oSideIntegerY = scoreBoardY;
   oSideIntegerWidth = easyWidth*1/2;
   oSideIntegerHeight = scoreBoardHeight;
-  //
+  textInstructionX = scoreBoardX;
+  textInstructionY = scoreBoardY + scoreBoardHeight;
+  textInstructionWidth = scoreBoardWidth;
+  textInstructionHeight = scoreBoardHeight;
   shareButtonX = appWidth - modeButtonX - tttBoardSection;
   shareButtonY = modeButtonY;
   shareButtonWidth = modeButtonWidth;
@@ -155,12 +158,12 @@ void setup() {
   rect( twoPlayerX, twoPlayerY, twoPlayerWidth, twoPlayerHeight ); //2-player Mode
   rect( ssRandomX, ssRandomY, ssRandomWidth, ssRandomHeight ); //Screen Saver Random
   rect( ssAiX, ssAiY, ssAiWidth, ssAiHeight ); //Screen Saver AI v AI
-  //rect( scoreBoardX, scoreBoardY, scoreBoardWidth, scoreBoardHeight ); //Scoreboard
+  rect( scoreBoardX, scoreBoardY, scoreBoardWidth, scoreBoardHeight ); //Scoreboard
   rect( xSideNameX, xSideNameY, xSideNameWidth, xSideNameHeight ); //Scoreboard: X Side, Name
   rect( xSideIntegerX, xSideIntegerY, xSideIntegerWidth, xSideIntegerHeight ); //Scoreboard: X Side, Wins
-  //rect( oSideNameX, oSideNameY, oSideNameWidth, oSideNameHeight ); //Scoreboard: O Side, Name
-  //rect( oSideIntegerX, oSideIntegerY, oSideIntegerWidth, oSideIntegerHeight ); //Scoreboard: O Side, Wins Integer
-  //rect( textInstructionX, textInstructionY, textInstructionWidth, textInstructionHeight ); //Instructions Text
+  rect( oSideNameX, oSideNameY, oSideNameWidth, oSideNameHeight ); //Scoreboard: O Side, Name
+  rect( oSideIntegerX, oSideIntegerY, oSideIntegerWidth, oSideIntegerHeight ); //Scoreboard: O Side, Wins Integer
+  rect( textInstructionX, textInstructionY, textInstructionWidth, textInstructionHeight ); //Instructions Text
   rect( shareButtonX, shareButtonY, shareButtonWidth, shareButtonHieght ); //Share Button
   rect( shareButtonScreenShotX, shareButtonScreenShotY, shareButtonScreenShotWidth, shareButtonScreenShotHieght ); //Share Button: screen shot
   //rect(); //Share Button: export & restart with preference
