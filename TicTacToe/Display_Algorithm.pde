@@ -1,3 +1,6 @@
+//Global Variables
+int appWidth, appHeight, smallDimension;
+//
 void displayAlgorithm() {
   smallDimension = ( appWidth >= appHeight ) ? appHeight : appWidth; //Ternary Operator
   //Purpose: CANVAS fits in monitor & dimension size is known
