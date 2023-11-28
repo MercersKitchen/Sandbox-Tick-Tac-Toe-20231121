@@ -35,7 +35,7 @@ Boolean OS_On=false;
 //
 void setup() {
   //Display, based on Google Tic Tac Toe
-  size(600, 400);
+  size(800, 500);
   appWidth = width; //displayWidth
   appHeight = height; //displayHeight
   smallDimension = ( appWidth<appHeight ) ? appWidth : appHeight;
@@ -112,7 +112,13 @@ void setup() {
   ssAiY = ssRandomY + menuHeight;
   ssAiWidth = modeMenuWidth;
   ssAiHeight = menuHeight;
-  scoreBoardX = modeMenuX + modeMenuWidth + modeMenuX;
+  //
+  float endOfModeButton = modeButtonX+modeMenuWidth;
+  float startOfShareButton = appWidth - modeButtonX - modeMenuWidth;
+  float scoreBoardSpace = startOfShareButton - endOfModeButton;
+  float scoreBoardLength = 4*buttonWidth;
+  float scoreBoardCenteringSpace = ( scoreBoardSpace - scoreBoardLength ) / 2;
+  scoreBoardX = endOfModeButton + scoreBoardCenteringSpace ;
   scoreBoardY = modeMenuY;
   scoreBoardWidth = modeMenuWidth*2;
   scoreBoardHeight = menuHeight*1.5;
