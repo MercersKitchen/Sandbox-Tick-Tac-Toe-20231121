@@ -24,8 +24,8 @@ void setup() {
   float titleY = height*1/10;
   float titleWidth = width*3/5;
   float titleHeight = height*1/10;
-  rect(titleX, titleY, titleWidth, titleHeight);
-  textDraw(height, purpleInk, CENTER, CENTER, titleFont, title, 0.6, titleX, titleY, titleWidth, titleHeight); //Should go in draw()
+  //rect(titleX, titleY, titleWidth, titleHeight); //DIV only for Initial Screen
+  textDraw(height, purpleInk, CENTER, CENTER, generalFont, click, 0.6, titleX, titleY, titleWidth, titleHeight); //Should go in draw()
   //
 } //End setup
 //

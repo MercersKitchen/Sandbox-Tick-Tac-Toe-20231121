@@ -1,8 +1,21 @@
 //Global Variables for Text
-PFont titleFont;
+PFont generalFont;
 //
 int titleX, titleY, titleWidth, titleHeight; //Layout rect()
-String title = "Click the Screen";
+String click = "Click the Screen";
+String restart = "Restart";
+String quit = "QUIT";
+String easy = "Easy";
+String medium = "Medium";
+String hard = "Impossible";
+String twoPlayer = "2 Player";
+String random = "Random Screen Saver";
+String randomAI = "Random AI Screen Saver";
+String x = "X";
+String o = "O";
+String xWins = "0";
+String oWins = "0";
+String textInstruction = "Who's Turn Is It";
 //
 color purpleInk = #2C08FF; //Not nice for Night Mode, Blue Content
 color whiteInk = #FFFFFF;
@@ -15,7 +28,7 @@ void textSetup()
    String[] fontList = PFont.list(); //To list all fonts available on system
    printArray(fontList); //For listing all possible fonts to choose, then createFont
    */
-  titleFont = createFont ("Harrington", 55); //Verify font exists
+  generalFont = createFont ("Harrington", 55); //Verify font exists
   //Tools / Create Font / Find Font / Do Not Press "OK", known bug
 }//End textSetup()
 //
@@ -32,7 +45,7 @@ void textDraw(float height, color ink, int alignHorizontal, int alignVertical, P
 {
   preDrawText(height, ink, alignHorizontal, alignVertical, font);
   //textSize: textWidth(STRING), rectWidth, startingFontSize
-  textSize(textCalculator(height, string, rectWidth, multiplier));
+  textSize( textCalculator(height, string, rectWidth, multiplier) );
   text(string, rectX, rectY, rectWidth, rectHeight);
   textReset();
 }//End textDraw
