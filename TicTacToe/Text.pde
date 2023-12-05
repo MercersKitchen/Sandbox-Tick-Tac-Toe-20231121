@@ -64,6 +64,6 @@ float textCalculator(float size, String string, float rectWidth, float mutliplie
     textSize(size);
   }//End WHILE;
   size =  size * mutliplier; //different fonts and string sizes need extra shrinking
-  println(size);
+  //println(size);
   return size; //Purpose of Calculator
 }//End textCalculator
