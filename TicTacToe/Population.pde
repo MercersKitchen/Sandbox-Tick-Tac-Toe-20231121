@@ -133,4 +133,9 @@ void population() {
   shareButtonScreenShotY = shareButtonY;
   shareButtonScreenShotWidth = modeMenuWidth;
   shareButtonScreenShotHieght = menuHeight;
+  //
+  //ScoreBoard
+  xWinsInt = 0;
+  oWinsInt = 0;
+  //
 } //End Population

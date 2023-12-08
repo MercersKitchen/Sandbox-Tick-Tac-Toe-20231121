@@ -13,6 +13,8 @@ void splashScreen() {
    splashScreenText();
    keyPressingXO(); //See XO KeyPressing
    threeIn_Row(); //See Game Over
+   boardFilled(); //See Game Over
+   scoreBoardDraw(); //See Score Board
    //
 } //End Splash Screen
 //

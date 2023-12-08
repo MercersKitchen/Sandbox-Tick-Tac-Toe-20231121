@@ -13,8 +13,8 @@ String random = "Random Screen Saver";
 String randomAI = "Random AI Screen Saver";
 String x = "X";
 String o = "O";
-String xWins = "0";
-String oWins = "0";
+String xWinsString = "0";
+String oWinsString = "0";
 String textInstruction = "Who's Turn Is It";
 //
 color purpleInk = #2C08FF; //Not nice for Night Mode, Blue Content
