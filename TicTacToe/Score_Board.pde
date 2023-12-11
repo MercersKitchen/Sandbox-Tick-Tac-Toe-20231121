@@ -13,8 +13,8 @@ void scoreBoardSetup() {
 //
 void scoreBoardDraw() {
   //
-  xWinsString = String.valueOf ( xWinsInt );
-  oWinsString = Integer.toString ( oWinsInt );
+  xWinsString = String.valueOf ( xWinsInt ); //Method one: int to string
+  oWinsString = Integer.toString ( oWinsInt ); //Method two: int to string
   println("X", xWinsString, xWinsInt);
   println("O", oWinsString, oWinsInt);
   //Scoreboard Names

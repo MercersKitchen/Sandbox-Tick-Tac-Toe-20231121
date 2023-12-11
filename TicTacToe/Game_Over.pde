@@ -18,18 +18,33 @@ void boardFilled() {
   }
 } //End boardFilled
 //
+/* Notes about next two voids
+ - when xWins() & xWinsBoolean was previously false, then xWinsInt increments by one
+ - xWinsBoolean=true turns off incrementation
+ - must add a Boolean that tracks when someone has one the game
+ */
 void xWins() {
   println("X Wins", xWinsInt);
-  if ( xWinsBoolean==false ) {xWinsInt++; xWinsBoolean=true;}
+  if ( xWinsBoolean==false ) {
+    xWinsInt++;
+    xWinsBoolean=true;
+  }
   gameOver();
 } //End boardFilled
 //
 void oWins() {
   println("O Wins", oWinsInt);
-  if ( oWinsBoolean==false ) {oWinsInt++; oWinsBoolean=true;}
+  if ( oWinsBoolean==false ) {
+    oWinsInt++;
+    oWinsBoolean=true;
+  }
   gameOver();
 } //End boardFilled
 //
+/* Note: someoneWins()
+- tracks X & O wins by passing the appropriate Boolean Value
+- appriopriate Boolean must be reset at RESET
+*/
 void threeIn_Row() {
   //Rows
   if ( tX1==true && tX2==true && tX3==true ) xWins();
@@ -46,10 +61,10 @@ void threeIn_Row() {
   if ( tO2==true && tO5==true && tO8==true ) oWins();
   if ( tO3==true && tO6==true && tO9==true ) oWins();
   //Diagonals
-  if ( tX1==true && tX5==true && tX9==true ) gameOver();
-  if ( tX3==true && tX5==true && tX7==true ) gameOver();
-  if ( tO1==true && tO5==true && tO9==true ) gameOver();
-  if ( tO3==true && tO5==true && tO7==true ) gameOver();
+  if ( tX1==true && tX5==true && tX9==true ) xWins();
+  if ( tX3==true && tX5==true && tX7==true ) xWins();
+  if ( tO1==true && tO5==true && tO9==true ) oWins();
+  if ( tO3==true && tO5==true && tO7==true ) oWins();
 } //End 3 In a Row
 //
 // End Sub Program Game Over
