@@ -6,17 +6,14 @@ Boolean xWinsBoolean=false, oWinsBoolean=false; //Must be reset to false in game
 Boolean addCounter1=true, addCounter2=true, addCounter3=true, addCounter4=true;
 Boolean addCounter5=true, addCounter6=true, addCounter7=true, addCounter8=true, addCounter9=true;
 //
-void gameOver() {
+void gameOver( Boolean xWinOnce, Boolean oWinOnce ) {
   println("Game Over"); //Expand this to WIN or CATS
-} //End gameOver
-//
-//Expand this to WIN or CATS
-void boardFilled() {
-  if ( counter>=9 ) {
-    println("CATs");
-    gameOver();
+  if ( counter>=9 ) println("CATs");
+  //
+  if ( xWinOnce==true ) { //Previously xWins() Procedure
+    
   }
-} //End boardFilled
+} //End gameOver
 //
 /* Notes about next two voids
  - when xWins() & xWinsBoolean was previously false, then xWinsInt increments by one
@@ -42,9 +39,9 @@ void oWins() {
 } //End boardFilled
 //
 /* Note: someoneWins()
-- tracks X & O wins by passing the appropriate Boolean Value
-- appriopriate Boolean must be reset at RESET
-*/
+ - tracks X & O wins by passing the appropriate Boolean Value
+ - appriopriate Boolean must be reset at RESET
+ */
 void threeIn_Row() {
   //Rows
   if ( tX1==true && tX2==true && tX3==true ) xWins();
