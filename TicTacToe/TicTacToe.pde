@@ -51,6 +51,9 @@ void keyPressed() {
   if ( key=='1' && tOff7==false && counter%2==1 ) tO7=true;
   if ( key=='2' && tOff8==false && counter%2==1 ) tO8=true;
   if ( key=='3' && tOff9==false && counter%2==1 ) tO9=true;
+  //
+  if ( key=='R' || key=='r' && someoneWinsReset==true) println("RESET Possible");
+  //
 } //End keyPressed
 //
 void mousePressed() {
