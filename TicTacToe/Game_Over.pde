@@ -1,11 +1,11 @@
 /* Does this doe run easier with Arrays, Procedures, and Loops?
  */
 //
-int counter=0, xWinsInt, oWinsInt;
-Boolean xWinsBoolean=false, oWinsBoolean=false; //Must be reset to false in game reset
-Boolean addCounter1=true, addCounter2=true, addCounter3=true, addCounter4=true;
-Boolean addCounter5=true, addCounter6=true, addCounter7=true, addCounter8=true, addCounter9=true;
-Boolean someoneWinsReset=false;
+int counter, xWinsInt, oWinsInt;
+Boolean xWinsBoolean, oWinsBoolean; //Must be reset to false in game reset
+Boolean addCounter1, addCounter2, addCounter3, addCounter4;
+Boolean addCounter5, addCounter6, addCounter7, addCounter8, addCounter9;
+Boolean someoneWinsReset;
 //
 /* Note: someoneWinsReset
  - tracks X & O wins by passing the appropriate Boolean Value
@@ -17,7 +17,7 @@ Boolean someoneWinsReset=false;
 void gameOver( Boolean xWinOnce, Boolean oWinOnce, Boolean someoneWins) {
   println("Game Over");
   //Note: counter also controls if gameOver is run as CATS but noone WINS, see Splash Screen
-  if ( counter>=9 ) { //CATS Code ignores all WIN Code by IF-ELSE Structure
+  if ( counter>=9 && xWinOnce==false && oWinOnce==false ) { //CATS Code ignores all WIN Code by IF-ELSE Structure
     println("CATs");
   } else { //WIN Code
     if ( xWinOnce==true ) { //Previously xWins() Procedure

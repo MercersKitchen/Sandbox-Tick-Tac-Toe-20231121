@@ -6,9 +6,9 @@
 //
 //Global Variables
 Boolean OS_On=false;
-Boolean tX1=false, tX2=false, tX3=false, tX4=false, tX5=false, tX6=false, tX7=false, tX8=false, tX9=false;
-Boolean tO1=false, tO2=false, tO3=false, tO4=false, tO5=false, tO6=false, tO7=false, tO8=false, tO9=false;
-Boolean tOff1=false, tOff2=false, tOff3=false, tOff4=false, tOff5=false, tOff6=false, tOff7=false, tOff8=false, tOff9=false;
+Boolean tX1, tX2, tX3, tX4, tX5, tX6, tX7, tX8, tX9;
+Boolean tO1, tO2, tO3, tO4, tO5, tO6, tO7, tO8, tO9;
+Boolean tOff1, tOff2, tOff3, tOff4, tOff5, tOff6, tOff7, tOff8, tOff9;
 //
 void setup() {
   //Display, based on Google Tic Tac Toe
@@ -17,6 +17,7 @@ void setup() {
   appHeight = height; //displayHeight
   smallDimension = ( appWidth<appHeight ) ? appWidth : appHeight;
   displayAlgorithm();
+  reset(); //Populated variables related to RESET Button, previously populated in Global Variables
   population();
   //divisions();
   textSetup();
@@ -52,7 +53,9 @@ void keyPressed() {
   if ( key=='2' && tOff8==false && counter%2==1 ) tO8=true;
   if ( key=='3' && tOff9==false && counter%2==1 ) tO9=true;
   //
-  if ( key=='R' || key=='r' && someoneWinsReset==true) println("RESET Possible");
+  if ( key=='R' || key=='r' && someoneWinsReset==true) {
+    reset();
+  } //End Reset Button
   //
 } //End keyPressed
 //
