@@ -15,8 +15,8 @@ void scoreBoardDraw() {
   //
   xWinsString = String.valueOf ( xWinsInt ); //Method one: int to string
   oWinsString = Integer.toString ( oWinsInt ); //Method two: int to string
-  println("X", xWinsString, xWinsInt, counter, someoneWinsReset);
-  println("O", oWinsString, oWinsInt);
+  //println("X", xWinsString, xWinsInt, counter, someoneWinsReset);
+  //println("O", oWinsString, oWinsInt);
   //Scoreboard Names
   textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.3, xSideNameX, xSideNameY, xSideNameWidth, xSideNameHeight);
   textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.3, oSideNameX, oSideNameY, oSideNameWidth, oSideNameHeight);
