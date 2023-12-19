@@ -4,113 +4,95 @@
  */
 //
 void keyPressingXO() {
-  if ( tX1==true ) {
+  if ( tX[1]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.5, tttX1, tttY1, tttWidth, tttHeight);
-    tOff1=true;
-    if ( addCounter1==true ) counter++;
-    addCounter1=false;
+    tOffX[1]=true;
+    if ( addCounter[1]==true ) writeXOrder(1);
   }
-  if ( tX2==true ) {
+  if ( tX[2]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.5, tttX2, tttY2, tttWidth, tttHeight);
-    tOff2=true;
-    if ( addCounter2==true ) counter++;
-    addCounter2=false;
+    tOffX[2]=true;
+    if ( addCounter[2]==true ) writeXOrder(2);
   }
-  if ( tX3==true ) {
+  if ( tX[3]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.5, tttX3, tttY3, tttWidth, tttHeight);
-    tOff3=true;
-    if ( addCounter3==true ) counter++;
-    addCounter3=false;
+    tOffX[3]=true;
+    if ( addCounter[3]==true ) writeXOrder(3);
   }
-  if ( tX4==true ) {
+  if ( tX[4]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.5, tttX4, tttY4, tttWidth, tttHeight);
-    tOff4=true;
-    if ( addCounter4==true ) counter++;
-    addCounter4=false;
+    tOffX[4]=true;
+    if ( addCounter[4]==true ) writeXOrder(4);
   }
-  if ( tX5==true ) {
+  if ( tX[5]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.5, tttX5, tttY5, tttWidth, tttHeight);
-    tOff5=true;
-    if ( addCounter5==true ) counter++;
-    addCounter5=false;
+    tOffX[5]=true;
+    if ( addCounter[5]==true ) writeXOrder(5);
   }
-  if ( tX6==true ) {
+  if ( tX[6]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.5, tttX6, tttY6, tttWidth, tttHeight);
-    tOff6=true;
-    if ( addCounter6==true ) counter++;
-    addCounter6=false;
+    tOffX[6]=true;
+    if ( addCounter[6]==true ) writeXOrder(6);
   }
-  if ( tX7==true ) {
+  if ( tX[7]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.5, tttX7, tttY7, tttWidth, tttHeight);
-    tOff7=true;
-    if ( addCounter7==true ) counter++;
-    addCounter7=false;
+    tOffX[7]=true;
+    if ( addCounter[7]==true ) writeXOrder(7);
   }
-  if ( tX8==true ) {
+  if ( tX[8]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.5, tttX8, tttY8, tttWidth, tttHeight);
-    tOff8=true;
-    if ( addCounter8==true ) counter++;
-    addCounter8=false;
+    tOffX[8]=true;
+    if ( addCounter[8]==true ) writeXOrder(8);
   }
-  if ( tX9==true ) {
+  if ( tX[9]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, x, 0.5, tttX9, tttY9, tttWidth, tttHeight);
-    tOff9=true;
-    if ( addCounter9==true ) counter++;
-    addCounter9=false;
+    tOffX[9]=true;
+    if ( addCounter[9]==true ) writeXOrder(9);
   }
-  if ( tO1==true ) {
+  if ( tO[1]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.5, tttX1, tttY1, tttWidth, tttHeight);
-    tOff1=true;
-    if ( addCounter1==true ) counter++;
-    addCounter1=false;
+    tOffO[1]=true;
+    if ( addCounter[1]==true ) writeOOrder(1);
   }
-  if ( tO2==true ) {
+  if ( tO[2]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.5, tttX2, tttY2, tttWidth, tttHeight);
-    tOff2=true;
-    if ( addCounter2==true ) counter++;
-    addCounter2=false;
+    tOffO[2]=true;
+    if ( addCounter[2]==true ) writeOOrder(2);
   }
-  if ( tO3==true ) {
+  if ( tO[3]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.5, tttX3, tttY3, tttWidth, tttHeight);
-    tOff3=true;
-    if ( addCounter3==true ) counter++;
-    addCounter3=false;
+    tOffO[3]=true;
+    if ( addCounter[3]==true ) writeOOrder(3);
   }
-  if ( tO4==true ) {
+  if ( tO[4]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.5, tttX4, tttY4, tttWidth, tttHeight);
-    tOff4=true;
-    if ( addCounter4==true ) counter++;
-    addCounter4=false;
+    tOffO[4]=true;
+    if ( addCounter[4]==true ) writeOOrder(4);
   }
-  if ( tO5==true ) {
+  if ( tO[5]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.5, tttX5, tttY5, tttWidth, tttHeight);
-    tOff5=true;
-    if ( addCounter5==true ) counter++;
-    addCounter5=false;
+    tOffO[5]=true;
+    if ( addCounter[5]==true ) writeOOrder(5);
   }
-  if ( tO6==true ) {
+  if ( tO[6]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.5, tttX6, tttY6, tttWidth, tttHeight);
-    tOff6=true;
-    if ( addCounter6==true ) counter++;
-    addCounter6=false;
+    tOffO[6]=true;
+    if ( addCounter[6]==true ) writeOOrder(6);
   }
-  if ( tO7==true ) {
+  if ( tO[7]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.5, tttX7, tttY7, tttWidth, tttHeight);
-    tOff7=true;
-    if ( addCounter7==true ) counter++;
-    addCounter7=false;
+    tOffO[7]=true;
+    if ( addCounter[7]==true ) writeOOrder(7);
   }
-  if ( tO8==true ) {
+  if ( tO[8]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.5, tttX8, tttY8, tttWidth, tttHeight);
-    tOff8=true;
-    if ( addCounter8==true ) counter++;
-    addCounter8=false;
+    tOffO[8]=true;
+    if ( addCounter[8]==true ) writeOOrder(8);
   }
-  if ( tO9==true ) {
+  if ( tO[9]==true ) {
     textDraw(height, purpleInk, CENTER, CENTER, generalFont, o, 0.5, tttX9, tttY9, tttWidth, tttHeight);
-    tOff9=true;
-    if ( addCounter9==true ) counter++;
-    addCounter9=false;
+    tOffO[9]=true;
+    if ( addCounter[9]==true ) writeOOrder(9);
   }
 } //End Key Pressed X
 //

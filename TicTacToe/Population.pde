@@ -138,4 +138,16 @@ void population() {
   xWinsInt = 0;
   oWinsInt = 0;
   //
+  readArrays();
 } //End Population
+//
+void readArrays() {
+  for ( int i=1; i<10; i++ ) {
+    tX[i]=false;
+    tO[i]=false;
+    tOffO[i]=false;
+    tOffX[i]=false;
+    addCounter[i]=true;
+  }
+}
+//

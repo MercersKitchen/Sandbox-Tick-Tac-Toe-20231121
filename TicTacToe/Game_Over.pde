@@ -3,8 +3,7 @@
 //
 int counter, xWinsInt, oWinsInt;
 Boolean xWinsBoolean, oWinsBoolean; //Must be reset to false in game reset
-Boolean addCounter1, addCounter2, addCounter3, addCounter4;
-Boolean addCounter5, addCounter6, addCounter7, addCounter8, addCounter9;
+Boolean[] addCounter = new Boolean[10];
 Boolean someoneWinsReset;
 //
 /* Note: someoneWinsReset
@@ -40,24 +39,24 @@ void gameOver( Boolean xWinOnce, Boolean oWinOnce, Boolean someoneWins) {
 //
 void threeIn_Row() {
   //Rows
-  if ( tX1==true && tX2==true && tX3==true ) gameOver( true, false, true); //Example of Developed Procedure
-  if ( tX4==true && tX5==true && tX6==true ) gameOver( true, false, true);
-  if ( tX7==true && tX8==true && tX9==true ) gameOver( true, false, true);
-  if ( tO1==true && tO2==true && tO3==true ) gameOver( false, true, true);
-  if ( tO4==true && tO5==true && tO6==true ) gameOver( false, true, true);
-  if ( tO7==true && tO8==true && tO9==true ) gameOver( false, true, true);
+  if ( tX[1]==true && tX[2]==true && tX[3]==true ) gameOver( true, false, true); //Example of Developed Procedure
+  if ( tX[4]==true && tX[5]==true && tX[6]==true ) gameOver( true, false, true);
+  if ( tX[7]==true && tX[8]==true && tX[9]==true ) gameOver( true, false, true);
+  if ( tO[1]==true && tO[2]==true && tO[3]==true ) gameOver( false, true, true);
+  if ( tO[4]==true && tO[5]==true && tO[6]==true ) gameOver( false, true, true);
+  if ( tO[7]==true && tO[8]==true && tO[9]==true ) gameOver( false, true, true);
   //Columns
-  if ( tX1==true && tX4==true && tX7==true ) gameOver( true, false, true);
-  if ( tX2==true && tX5==true && tX8==true ) gameOver( true, false, true);
-  if ( tX3==true && tX6==true && tX9==true ) gameOver( true, false, true);
-  if ( tO1==true && tO4==true && tO7==true ) gameOver( false, true, true);
-  if ( tO2==true && tO5==true && tO8==true ) gameOver( false, true, true);
-  if ( tO3==true && tO6==true && tO9==true ) gameOver( false, true, true);
+  if ( tX[1]==true && tX[4]==true && tX[7]==true ) gameOver( true, false, true);
+  if ( tX[2]==true && tX[5]==true && tX[8]==true ) gameOver( true, false, true);
+  if ( tX[3]==true && tX[6]==true && tX[9]==true ) gameOver( true, false, true);
+  if ( tO[1]==true && tO[4]==true && tO[7]==true ) gameOver( false, true, true);
+  if ( tO[2]==true && tO[5]==true && tO[8]==true ) gameOver( false, true, true);
+  if ( tO[3]==true && tO[6]==true && tO[9]==true ) gameOver( false, true, true);
   //Diagonals
-  if ( tX1==true && tX5==true && tX9==true ) gameOver( true, false, true);
-  if ( tX3==true && tX5==true && tX7==true ) gameOver( true, false, true);
-  if ( tO1==true && tO5==true && tO9==true ) gameOver( false, true, true);
-  if ( tO3==true && tO5==true && tO7==true ) gameOver( false, true, true);
+  if ( tX[1]==true && tX[5]==true && tX[9]==true ) gameOver( true, false, true);
+  if ( tX[3]==true && tX[5]==true && tX[7]==true ) gameOver( true, false, true);
+  if ( tO[1]==true && tO[5]==true && tO[9]==true ) gameOver( false, true, true);
+  if ( tO[3]==true && tO[5]==true && tO[7]==true ) gameOver( false, true, true);
 } //End 3 In a Row
 //
 // End Sub Program Game Over

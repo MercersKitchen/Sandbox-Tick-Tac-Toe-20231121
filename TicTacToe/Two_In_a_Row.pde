@@ -1,24 +1,20 @@
 /* Recognizing two in a row
- - How does arrays and procedures make this better organized
- - NOTE: these return a recommendation index
- - WIN or BLOCK depends on counter index
+ - Counter (i.e. COUNTER%2=0|1) triggers recommendation for WIN
+ - After the 3rd turn, RECOMMENDATION is for X to WIN
+ - Algotith:
+ - 1. Compare both X-Space values, choose smaller number, linear search from bottom
+ - 2. Identify the second X-Space and verify
+ - 3. Idenitfy the 3rd X-Space for ROW, Diagonal-down-left, Column, Diagonal-down-right
+ - 4. Verify it is not filled by O
+ - Recommendation: X for WIN return a recommendation index
  - Use println to CONSOLE
- - Uses COUNTER%2=0|1
+/* Advanced Notes
+ - How does arrays and procedures make this better organized
+ - NOTE: these
+ - WIN or BLOCK depends on counter index
+ */
+/* Misc
  - NOTE: all other println() must be turned off
- - CAUTION: based on 3 in a row code ... 3x2 recommendations can be made
- - Question: is Boolean Block needed?
- //
- - Possible Algorithm: read what is know, return what is recommended (inbetween turns, after | before)
- - NOTE: modulus changes, O is odd, X is even
- - ERROR Check: is the recommendation occupied
- - Input triggers calculation
- - First is true, second is true, third is false
- - Counter: after 3rd turn, O can BLOCK
- - Counter: after 4th turn, X can BLOCK or WIN
- - Counter: after 5th turn, O can BLOCK or WIN
- - Counter: after 6th turn, X can BLOCK or WIN
- - Counter: after 7th turn, O can BLOCK or WIN
- - Counter: after 8th turn, X can BLOCK or WIN
  */
 /* Three in a row code
  //Rows
@@ -41,54 +37,80 @@
  if ( tO1==true && tO5==true && tO9==true )
  if ( tO3==true && tO5==true && tO7==true )
  */
-void twoSequence() {
-  //Rows i+1, first two, i is first value
-  if ( tX1==true && tX2==true && tX3==false && counter%2==0 ) println("X Wins if space", 3, "occupied"); // i+2
-  if ( tX4==true && tX5==true && tX6==false && counter%2==0 ) println("X Wins if space", 6, "occupied");
-  if ( tX7==true && tX8==true && tX9==false && counter%2==0 ) println("X Wins if space", 9, "occupied");
-  if ( tO1==true && tO2==true && tX3==false && counter%2==1 ) println("O Blocks if space", 3, "occupied");
-  if ( tO4==true && tO5==true && tX6==false && counter%2==1 ) println("O Blocks if space", 6, "occupied");
-  if ( tO7==true && tO8==true && tX9==false && counter%2==1 ) println("O Blocks if space", 9, "occupied");
-  //Rows i-1, first and third, i is first value
-  if ( tX1==true && tX2==false && tX3==true && counter%2==0 ) println("X Wins if space", 2, "occupied"); // i+1
-  if ( tX4==true && tX5==false && tX6==true && counter%2==0 ) println("X Wins if space", 5, "occupied");
-  if ( tX7==true && tX8==false && tX9==true && counter%2==0 ) println("X Wins if space", 8, "occupied");
-  if ( tO1==true && tX2==false && tO3==true && counter%2==1 ) println("O Wins if space", 2, "occupied");
-  if ( tO4==true && tX5==false && tO6==true && counter%2==1 ) println("O Wins if space", 5, "occupied");
-  if ( tO7==true && tX8==false && tO9==true && counter%2==1 ) println("O Wins if space", 8, "occupied");
-  //Rows i++, second and third
-  if ( tX1==false && tX2==true && tX3==true && counter%2==0 ) println("X Wins if space", 1, "occupied"); //(i+3) - (i+2)
-  if ( tX4==false && tX5==true && tX6==true && counter%2==0 ) println("X Wins if space", 4, "occupied");
-  if ( tX7==false && tX8==true && tX9==true && counter%2==0 ) println("X Wins if space", 7, "occupied");
-  if ( tX1==false && tX2==true && tX3==true && counter%2==1 ) println("O Wins if space", 1, "occupied");
-  if ( tX4==false && tX5==true && tX6==true && counter%2==1 ) println("O Wins if space", 4, "occupied");
-  if ( tX7==false && tX8==true && tX9==true && counter%2==1 ) println("O Wins if space", 7, "occupied");
-  //Columns i+=3, first two, i is first value
-  if ( tX1==true && tX4==true && tX7==false && counter%2==0 ) println("X Wins if space", 7, "occupied"); // 3i+2^(3-i)
-  if ( tX2==true && tX5==true && tX8==false && counter%2==0 ) println("X Wins if space", 8, "occupied");
-  if ( tX3==true && tX6==true && tX9==false && counter%2==0 ) println("X Wins if space", 9, "occupied");
-  if ( tO1==true && tO4==true && tO7==false && counter%2==1 ) println("0 Wins if space", 7, "occupied");
-  if ( tO2==true && tO5==true && tO8==false && counter%2==1 ) println("0 Wins if space", 8, "occupied");
-  if ( tO3==true && tO6==true && tO9==false && counter%2==1 ) println("0 Wins if space", 9, "occupied");
-  //Columns i+=3, first and third, i is first value
-  if ( tX1==true && tX4==false && tX7==true && counter%2==0 ) println("X Wins if space", 4, "occupied"); // i+3
-  if ( tX2==true && tX5==false && tX8==true && counter%2==0 ) println("X Wins if space", 5, "occupied");
-  if ( tX3==true && tX6==false && tX9==true && counter%2==0 ) println("X Wins if space", 6, "occupied");
-  if ( tO1==true && tO4==false && tO7==true && counter%2==1 ) println("0 Wins if space", 4, "occupied");
-  if ( tO2==true && tO5==false && tO8==true && counter%2==1 ) println("0 Wins if space", 5, "occupied");
-  if ( tO3==true && tO6==false && tO9==true && counter%2==1 ) println("0 Wins if space", 6, "occupied");
-  //Columns i+=3 second and third, i is first value
-  if ( tX1==false && tX4==true && tX7==true && counter%2==0 ) println("X Wins if space", 1, "occupied"); // (i+6) - (i+3)
-  if ( tX2==false && tX5==true && tX8==true && counter%2==0 ) println("X Wins if space", 2, "occupied");
-  if ( tX3==false && tX6==true && tX9==true && counter%2==0 ) println("X Wins if space", 3, "occupied");
-  if ( tO1==false && tO4==true && tO7==true && counter%2==1 ) println("0 Wins if space", 1, "occupied");
-  if ( tO2==false && tO5==true && tO8==true && counter%2==1 ) println("0 Wins if space", 2, "occupied");
-  if ( tO3==false && tO6==true && tO9==true && counter%2==1 ) println("0 Wins if space", 3, "occupied");
-  //Diagonals
-  if ( tX1==true && tX5==true && tX9==true ) gameOver( true, false, true);
-  if ( tX3==true && tX5==true && tX7==true ) gameOver( true, false, true);
-  if ( tO1==true && tO5==true && tO9==true ) gameOver( false, true, true);
-  if ( tO3==true && tO5==true && tO7==true ) gameOver( false, true, true);
+//Global Variables
+int[] XOrder = new int[10]; //Note: [0] is not used
+int[] OOrder = new int[10]; //Note: [0] is not used
+int xCounter, oCounter;
+//
+void initializeTwoInRow() {
+  for ( int i=1; i<10; i++ ) {
+    XOrder[i] = 0;
+    OOrder[i] = 0;
+  }
+  xCounter = 0;
+  oCounter = 0;
+} //End Initializing Two in a Row
+//
+void twoInRowRecommendation() {
+  int smallerNumber, largerNumber;
+  /* Combos: numbers for the X Order, choose smaller number, match to spaces that are tOff
+   - Row=1
+   - Diagnonal=2
+   - COlumn=3
+   - Diagonal=4
+   */
+  if ( xCounter==2 ) {
+    if ( XOrder[1] < XOrder[2] ) {
+      smallerNumber = XOrder[1];
+      largerNumber = XOrder[2];
+    } else {
+      smallerNumber = XOrder[2];
+      largerNumber = XOrder[1];
+    }
+    println (smallerNumber-1, tOffX[smallerNumber], largerNumber, tOffX[largerNumber]);
+    //tOff || for Row (else if) else not a row
+    //FAILS for 1X(2), 2O(8), 3X(3), 
+    if (tOffX[smallerNumber]==true && tOffX[smallerNumber+1]==true && tOffX[smallerNumber+2]==false) { //seeing space 4 instead
+      println("Row: first two", tOffX[smallerNumber], tOffX[largerNumber]);
+    } else if (tOffX[smallerNumber]==true && tOffX[smallerNumber+2]==true && tOffX[smallerNumber+1]==false) {
+      println("Row: first and third", tOffX[smallerNumber], tOffX[largerNumber]);
+    } else if (tOffX[smallerNumber]==true && tOffX[smallerNumber+1]==true && tOffX[smallerNumber-1]==false) {
+      println("Row: last two", tOffX[smallerNumber], tOffX[largerNumber]);
+    } else {
+      println("Something Else");
+    }
+  }
+} //End Two in a Row Recommendation
+//
+void writeXOrder(int boardSpaceNumber) {
+  //println("here");
+  counter++;
+  xCounter++;
+  XOrder[X_Order(xCounter)] = boardSpaceNumber;
+  addCounter[boardSpaceNumber]=false;
 } //End Two in a Sequence
 //
+int X_Order(int counterParameter) {
+  int index=0;
+  for ( int i=1; i<10; i++ ) {
+    if ( XOrder[i]==0 ) index=counterParameter;
+  }
+  return index;
+}
+//
+void writeOOrder(int boardSpaceNumber) {
+  //println("here");
+  counter++;
+  oCounter++;
+  OOrder[O_Order(oCounter)] = boardSpaceNumber;
+  addCounter[boardSpaceNumber]=false;
+} //End Two in a Sequence
+//
+int O_Order(int counterParameter) {
+  int index=0;
+  for ( int i=1; i<10; i++ ) {
+    if ( OOrder[i]==0 ) index=counterParameter;
+  }
+  return index;
+}
 // End Subprogram Two in a Row

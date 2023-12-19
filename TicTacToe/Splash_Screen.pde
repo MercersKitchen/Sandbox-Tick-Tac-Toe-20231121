@@ -19,6 +19,9 @@ void splashScreen() {
   if ( someoneWinsReset==true ) println( "Game Over" );
   scoreBoardDraw(); //See Score Board
   //
+  twoInRowRecommendation();
+  printArray(XOrder);
+  //
 } //End Splash Screen
 //
 void splashScreenText() {

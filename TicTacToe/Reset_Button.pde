@@ -6,45 +6,9 @@ void reset() {
   someoneWinsReset=false;
   counter=0;
   //
-  tX1=false;
-  tX2=false;
-  tX3=false;
-  tX4=false;
-  tX5=false;
-  tX6=false;
-  tX7=false;
-  tX8=false;
-  tX9=false;
-  tO1=false;
-  tO2=false;
-  tO3=false;
-  tO4=false;
-  tO5=false;
-  tO6=false;
-  tO7=false;
-  tO8=false;
-  tO9=false;
-  tOff1=false;
-  tOff2=false;
-  tOff3=false;
-  tOff4=false;
-  tOff5=false;
-  tOff6=false;
-  tOff7=false;
-  tOff8=false;
-  tOff9=false;
-  //
+  readArrays();
   xWinsBoolean=false;
   oWinsBoolean=false;
-  addCounter1=true;
-  addCounter2=true;
-  addCounter3=true;
-  addCounter4=true;
-  addCounter5=true;
-  addCounter6=true;
-  addCounter7=true;
-  addCounter8=true;
-  addCounter9=true;
   //
   noStroke(); //Activate this code when board is drawn with lines
   rect( tttX1, tttY1, tttWidth, tttHeight ); //TTT Space 1
@@ -57,6 +21,10 @@ void reset() {
   rect( tttX8, tttY8, tttWidth, tttHeight ); //TTT Space 8
   rect( tttX9, tttY9, tttWidth, tttHeight ); //TTT Space 9
   stroke(1); //reset default, see nostroke() above
+  //
+  initializeTwoInRow();
+  //
+  readArrays(); //See Population
 } //End Reset
 //
 // End Subprogram Reset Button

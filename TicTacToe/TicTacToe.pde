@@ -6,9 +6,10 @@
 //
 //Global Variables
 Boolean OS_On=false;
-Boolean tX1, tX2, tX3, tX4, tX5, tX6, tX7, tX8, tX9;
-Boolean tO1, tO2, tO3, tO4, tO5, tO6, tO7, tO8, tO9;
-Boolean tOff1, tOff2, tOff3, tOff4, tOff5, tOff6, tOff7, tOff8, tOff9;
+Boolean[] tX = new Boolean[10]; //Note[0] not used
+Boolean[] tO = new Boolean[10]; //Note[0] not used
+Boolean[] tOffX = new Boolean[10]; //Note[0] not used
+Boolean[] tOffO = new Boolean[10]; //Note[0] not used
 //
 void setup() {
   //Display, based on Google Tic Tac Toe
@@ -21,6 +22,7 @@ void setup() {
   population();
   //divisions();
   textSetup();
+  initializeTwoInRow(); //see Two in a Row
   //
   startUpScreen();
   //
@@ -33,25 +35,25 @@ void draw() {
 void keyPressed() {
   //
   //2-Player Game Mode
-  if ( key=='Q' || key=='q' && tOff1==false && counter%2==0 ) tX1=true;
-  if ( key=='W' || key=='w' && tOff2==false && counter%2==0 ) tX2=true;
-  if ( key=='E' || key=='e' && tOff3==false && counter%2==0 ) tX3=true;
-  if ( key=='A' || key=='a' && tOff4==false && counter%2==0 ) tX4=true;
-  if ( key=='S' || key=='s' && tOff5==false && counter%2==0 ) tX5=true;
-  if ( key=='D' || key=='d' && tOff6==false && counter%2==0 ) tX6=true;
-  if ( key=='Z' || key=='z' && tOff7==false && counter%2==0 ) tX7=true;
-  if ( key=='X' || key=='x' && tOff8==false && counter%2==0 ) tX8=true;
-  if ( key=='C' || key=='c' && tOff9==false && counter%2==0 ) tX9=true;
+  if ( key=='Q' || key=='q' && tOffX[1]==false && counter%2==0 ) tX[1]=true;
+  if ( key=='W' || key=='w' && tOffX[2]==false && counter%2==0 ) tX[2]=true;
+  if ( key=='E' || key=='e' && tOffX[3]==false && counter%2==0 ) tX[3]=true;
+  if ( key=='A' || key=='a' && tOffX[4]==false && counter%2==0 ) tX[4]=true;
+  if ( key=='S' || key=='s' && tOffX[5]==false && counter%2==0 ) tX[5]=true;
+  if ( key=='D' || key=='d' && tOffX[6]==false && counter%2==0 ) tX[6]=true;
+  if ( key=='Z' || key=='z' && tOffX[7]==false && counter%2==0 ) tX[7]=true;
+  if ( key=='X' || key=='x' && tOffX[8]==false && counter%2==0 ) tX[8]=true;
+  if ( key=='C' || key=='c' && tOffX[9]==false && counter%2==0 ) tX[9]=true;
   //
-  if ( key=='7' && tOff1==false && counter%2==1 ) tO1=true;
-  if ( key=='8' && tOff2==false && counter%2==1 ) tO2=true;
-  if ( key=='9' && tOff3==false && counter%2==1 ) tO3=true;
-  if ( key=='4' && tOff4==false && counter%2==1 ) tO4=true;
-  if ( key=='5' && tOff5==false && counter%2==1 ) tO5=true;
-  if ( key=='6' && tOff6==false && counter%2==1 ) tO6=true;
-  if ( key=='1' && tOff7==false && counter%2==1 ) tO7=true;
-  if ( key=='2' && tOff8==false && counter%2==1 ) tO8=true;
-  if ( key=='3' && tOff9==false && counter%2==1 ) tO9=true;
+  if ( key=='7' && tOffO[1]==false && counter%2==1 ) tO[1]=true;
+  if ( key=='8' && tOffO[2]==false && counter%2==1 ) tO[2]=true;
+  if ( key=='9' && tOffO[3]==false && counter%2==1 ) tO[3]=true;
+  if ( key=='4' && tOffO[4]==false && counter%2==1 ) tO[4]=true;
+  if ( key=='5' && tOffO[5]==false && counter%2==1 ) tO[5]=true;
+  if ( key=='6' && tOffO[6]==false && counter%2==1 ) tO[6]=true;
+  if ( key=='1' && tOffO[7]==false && counter%2==1 ) tO[7]=true;
+  if ( key=='2' && tOffO[8]==false && counter%2==1 ) tO[8]=true;
+  if ( key=='3' && tOffO[9]==false && counter%2==1 ) tO[9]=true;
   //
   if ( key=='R' || key=='r' && someoneWinsReset==true) {
     reset();
